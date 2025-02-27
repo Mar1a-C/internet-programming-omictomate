@@ -1,0 +1,24 @@
+<h2>📊 Movie Statistics</h2>
+
+<p><strong>Total Movies:</strong> {{ totalMovies }}</p>
+<p><strong>Total Actors:</strong> {{ totalActors }}</p>
+<p><strong>Total Genres:</strong> {{ totalGenres }}</p>
+<p><strong>Total Oscars Won:</strong> {{ totalOscars }}</p>
+
+<h3>🎭 Movies Per Genre</h3>
+<ul>
+  <li *ngFor="let genre of genreKeys">
+    {{ genre }}: {{ moviesPerGenre[genre] }} movies
+  </li>
+</ul>
+
+<h3>🕰 Movies Per Decade</h3>
+<ul>
+  <li *ngFor="let decade of decadeKeys">
+    {{ decade }}s: {{ moviesPerDecade[decade] }} movies
+  </li>
+</ul>
+
+<p><strong>Unknown Actors:</strong> {{ unknownActors }}</p>
+
+<a [routerLink]="['/movies']">⬅ Back to Movies</a>

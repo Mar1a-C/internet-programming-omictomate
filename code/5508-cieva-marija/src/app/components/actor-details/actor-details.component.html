@@ -1,0 +1,14 @@
+<h2>{{ actor?.name }}</h2>
+
+<p><strong>Birthdate:</strong> {{ actor?.birthdate }}</p>
+<p><strong>Height:</strong> {{ actor?.height }} cm</p>
+<p><strong>Nationality:</strong> {{ actor?.nationality }}</p>
+
+<h3>Notable Works:</h3>
+<ul>
+  <li *ngFor="let movie of actor?.notable_works">
+    <a [routerLink]="['/movies', movie]">{{ movie }}</a>
+  </li>
+</ul>
+
+<a [routerLink]="['/movies']">⬅ Back to Movies</a>

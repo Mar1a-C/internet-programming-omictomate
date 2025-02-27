@@ -1,0 +1,26 @@
+<h2>{{ movie?.title }}</h2>
+
+<p><strong>Year:</strong> {{ movie?.year }}</p>
+<p><strong>Director:</strong> {{ movie?.director }}</p>
+<p><strong>Plot:</strong> {{ movie?.plot }}</p>
+<p><strong>Genres:</strong> {{ movie?.genre?.join(', ') }}</p>
+
+<h3>🏆 Oscars Won</h3>
+<ul>
+  <li *ngFor="let oscar of oscarKeys">
+    {{ oscar }} - {{ movie.oscars[oscar] }}
+  </li>
+</ul>
+
+<p><strong>Rating:</strong> {{ movie?.rating }}</p>
+
+<h3>🎭 Cast</h3>
+<ul>
+  <li *ngFor="let actor of movie?.cast">
+    <a [routerLink]="['/actors', actor.actor]">{{ actor.actor }}</a> as {{ actor.character }}
+  </li>
+</ul>
+
+<button (click)="deleteMovie()">🗑 Delete Movie</button>
+<a class="button-link" [routerLink]="['/movies', movie.id, 'edit']">✏️ Edit Movie</a>
+<a class="button-link" [routerLink]="['/movies']">⬅ Back to Movies</a>

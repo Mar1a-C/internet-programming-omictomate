@@ -1,0 +1,25 @@
+<h2>🎬 Create Movie</h2>
+
+<form (submit)="saveMovie()">
+  <label>Title:</label>
+  <input type="text" [(ngModel)]="movie.title" required>
+
+  <label>Year:</label>
+  <input type="number" [(ngModel)]="movie.year" required>
+
+  <label>Director:</label>
+  <input type="text" [(ngModel)]="movie.director" required>
+
+  <label>Plot:</label>
+  <textarea [(ngModel)]="movie.plot"></textarea>
+
+  <label>Genre:</label>
+  <select [(ngModel)]="movie.genre" multiple>
+  </select>
+
+  <label>Rating:</label>
+  <input type="number" [(ngModel)]="movie.rating">
+
+  <button type="submit">✅ Save</button>
+  <a class="button-link" [routerLink]="['/movies']">⬅ Cancel</a>
+</form>
